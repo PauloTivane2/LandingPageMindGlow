@@ -1,6 +1,5 @@
 import type { ComponentType, ReactNode } from "react"
 import {
-  Apple,
   ArrowRight,
   AtSign,
   Bell,
@@ -8,6 +7,7 @@ import {
   Check,
   ClipboardList,
   Dumbbell,
+  Download,
   EyeOff,
   HeartHandshake,
   HeartPulse,
@@ -15,7 +15,6 @@ import {
   LockKeyhole,
   Mail,
   MessageCircle,
-  Play,
   ShieldCheck,
   Smile,
   Sparkles,
@@ -257,13 +256,14 @@ function Hero() {
             transition={{ duration: 0.6 }}
             className="mt-8 flex flex-col gap-3 sm:flex-row"
           >
+            <span className="sr-only">Links externos de download</span>
             <ButtonLink href={clientAppUrl} external>
-              <UserRound className="size-5" />
-              App do paciente
+              <Download className="size-5" />
+              Baixar app do paciente
             </ButtonLink>
             <ButtonLink href={specialistAppUrl} variant="outline" external>
-              <HeartHandshake className="size-5" />
-              App do especialista
+              <Download className="size-5" />
+              Baixar app do especialista
             </ButtonLink>
           </motion.div>
           <motion.div
@@ -723,6 +723,9 @@ function CTA() {
         <motion.h2 className="relative font-display text-4xl font-semibold tracking-tight text-white sm:text-headline-section">
           Escolha o seu espaço no MindGlow.
         </motion.h2>
+        <p className="relative mt-3 text-xs font-bold uppercase tracking-[0.2em] text-primary-light">
+          Links de download externos
+        </p>
         <p className="relative mx-auto mt-4 max-w-xl text-base leading-7 text-white/75">
           O paciente acompanha a própria jornada. O especialista acompanha o
           cuidado e mantém a conexão entre os encontros.
@@ -730,8 +733,8 @@ function CTA() {
         <div className="relative mt-8 grid gap-4 text-left sm:grid-cols-2">
           <ButtonLink href={clientAppUrl} variant="white" external className="flex-col items-start gap-1 rounded-2xl px-6 py-4">
             <span className="flex items-center gap-2">
-              <UserRound className="size-5" />
-              App do paciente
+              <Download className="size-5" />
+              Baixar app do paciente
             </span>
             <span className="text-xs font-normal text-text-secondary-light">
               Para acompanhar sentimentos, hábitos e evolução.
@@ -739,8 +742,8 @@ function CTA() {
           </ButtonLink>
           <ButtonLink href={specialistAppUrl} variant="white-outline" external className="flex-col items-start gap-1 rounded-2xl px-6 py-4">
             <span className="flex items-center gap-2">
-              <HeartHandshake className="size-5" />
-              App do especialista
+              <Download className="size-5" />
+              Baixar app do especialista
             </span>
             <span className="text-xs font-normal text-white/70">
               Para acompanhar pacientes e orientar o cuidado.
