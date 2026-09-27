@@ -26,7 +26,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
 
 import consultationImage from "./imports/consulta-1.png"
 import progressImage from "./imports/four-1.png"
-import logo from "./imports/mindGlow_Logo-1.png"
+import logo from "./logo/MingGlowPng (1).png"
 import meditationImage from "./imports/one-1.png"
 
 type Icon = ComponentType<{ className?: string strokeWidth?: number }>
@@ -43,7 +43,7 @@ const stagger = {
 
 function Logo({
   className,
-  label = true,
+  label = false,
   light = false,
 }: {
   className: string
@@ -164,7 +164,7 @@ function Header() {
           aria-label="MindGlow — início"
           whileHover={{ scale: 1.03 }}
         >
-          <Logo className="size-11" />
+          <Logo className="h-10 w-40" />
         </motion.a>
         <nav
           aria-label="Navegação principal"
@@ -736,7 +736,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
         <div className="grid gap-10 border-b border-primary/15 pb-10 md:grid-cols-[1.4fr_0.6fr_0.8fr]">
           <div>
-            <Logo className="size-14" />
+            <Logo className="h-12 w-44" />
             <p className="mt-4 max-w-sm text-sm leading-6 text-text-secondary-light">
               Tecnologia e cuidado humano para apoiar uma vida mais consciente,
               saudável e conectada.
