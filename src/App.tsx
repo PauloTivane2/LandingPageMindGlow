@@ -821,12 +821,12 @@ function Footer() {
               Fale conosco
             </p>
             <motion.a
-              href="mailto:ola@mindglow.app"
+              href="mailto:mindglow.suporte@gmail.com"
               whileHover={{ x: 3 }}
               className="mt-4 inline-flex items-center gap-2 text-sm text-text-secondary-light hover:text-primary-dark"
             >
               <Mail className="size-4" />
-              ola@mindglow.app
+              mindglow.suporte@gmail.com
             </motion.a>
             <div className="mt-5 flex gap-3">
               {[AtSign, Globe2].map((SocialIcon, index) => (
