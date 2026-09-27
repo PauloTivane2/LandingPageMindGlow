@@ -14,12 +14,14 @@ import {
   Globe2,
   LockKeyhole,
   Mail,
+  Menu,
   MessageCircle,
   ShieldCheck,
   Smile,
   Sparkles,
   UserRound,
   Video,
+  X,
 } from "lucide-react"
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
 
@@ -167,6 +169,8 @@ function SectionTitle({
 }
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border-light/70 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-background-dark/85">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
@@ -179,7 +183,7 @@ function Header() {
         </motion.a>
         <nav
           aria-label="Navegação principal"
-          className="hidden items-center gap-7 md:flex"
+          className={`${menuOpen ? "flex" : "hidden"} absolute left-5 right-5 top-[4.5rem] flex-col gap-2 rounded-2xl border border-border-light bg-white p-4 shadow-xl dark:border-white/10 dark:bg-surface-dark md:static md:flex md:flex-row md:items-center md:gap-7 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
         >
           {[
             ["Sobre", "#sobre"],
@@ -196,11 +200,40 @@ function Header() {
               {label}
             </motion.a>
           ))}
+          <div className="mt-2 grid gap-2 border-t border-border-light pt-3 md:hidden dark:border-white/10">
+            <a
+              href={clientAppUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-xl bg-primary px-4 py-3 text-center text-sm font-bold text-background-dark"
+            >
+              Baixar app do paciente
+            </a>
+            <a
+              href={specialistAppUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-xl border border-secondary/40 px-4 py-3 text-center text-sm font-bold text-text-primary-light dark:text-white"
+            >
+              Baixar app do especialista
+            </a>
+          </div>
         </nav>
-        <ButtonLink href="#download" className="px-4 py-2.5">
+        <div className="flex items-center gap-2">
+          <ButtonLink href="#download" className="px-4 py-2.5">
           Download
           <ArrowRight className="size-4" />
-        </ButtonLink>
+          </ButtonLink>
+          <button
+            type="button"
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+            className="grid size-11 place-items-center rounded-full border border-border-light text-text-primary-light md:hidden dark:border-white/10 dark:text-white"
+          >
+            {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
       </div>
     </header>
   )
