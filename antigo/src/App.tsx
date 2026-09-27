@@ -27,6 +27,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
 import consultationImage from "./imports/consulta-1.png"
 import progressImage from "./imports/four-1.png"
 import logo from "./logo/MingGlowPng (1).png"
+import simpleLogo from "./logo/MindGlow1Png.png"
 import meditationImage from "./imports/one-1.png"
 
 type Icon = ComponentType<{ className?: string strokeWidth?: number }>
@@ -45,15 +46,17 @@ function Logo({
   className,
   label = false,
   light = false,
+  image = logo,
 }: {
   className: string
   label?: boolean
   light?: boolean
+  image?: string
 }) {
   return (
     <span className="inline-flex items-center gap-2.5">
       <img
-        src={logo}
+        src={image}
         alt="MindGlow"
         className={`${className} shrink-0 object-contain`}
       />
@@ -164,7 +167,7 @@ function Header() {
           aria-label="MindGlow — início"
           whileHover={{ scale: 1.03 }}
         >
-          <Logo className="h-10 w-40" />
+          <Logo className="h-10 w-40" image={simpleLogo} />
         </motion.a>
         <nav
           aria-label="Navegação principal"
