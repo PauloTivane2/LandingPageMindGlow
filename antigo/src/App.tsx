@@ -30,6 +30,11 @@ import logo from "./logo/MingGlowPng (1).png"
 import simpleLogo from "./logo/MindGlow1Png.png"
 import meditationImage from "./imports/one-1.png"
 
+const clientAppUrl =
+  "https://drive.google.com/file/d/1Z1mTk_dT5IM8devC12KiAJ8MsA8gt7ah/view?usp=drive_link"
+const specialistAppUrl =
+  "https://drive.google.com/file/d/1zI_F86zd5jkmLSNG5W78uhZCtNs-t0Uz/view?usp=drive_link"
+
 type Icon = ComponentType<{ className?: string strokeWidth?: number }>
 
 const reveal = {
@@ -78,11 +83,13 @@ function ButtonLink({
   children,
   variant = "primary",
   className = "",
+  external = false,
 }: {
   href: string
   children: ReactNode
   variant?: "primary" | "outline" | "white" | "white-outline"
   className?: string
+  external?: boolean
 }) {
   const styles = {
     primary:
@@ -98,6 +105,8 @@ function ButtonLink({
   return (
     <motion.a
       href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
       whileHover={{ scale: 1.03, y: -1 }}
       whileTap={{ scale: 0.98 }}
       className={`inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold tracking-wide transition-colors ${styles[variant]} ${className}`}
@@ -248,13 +257,13 @@ function Hero() {
             transition={{ duration: 0.6 }}
             className="mt-8 flex flex-col gap-3 sm:flex-row"
           >
-            <ButtonLink href="#download">
-              <Apple className="size-5" />
-              Baixar para iOS
+            <ButtonLink href={clientAppUrl} external>
+              <UserRound className="size-5" />
+              App do paciente
             </ButtonLink>
-            <ButtonLink href="#download" variant="outline">
-              <Play className="size-5 fill-current" />
-              Baixar para Android
+            <ButtonLink href={specialistAppUrl} variant="outline" external>
+              <HeartHandshake className="size-5" />
+              App do especialista
             </ButtonLink>
           </motion.div>
           <motion.div
@@ -712,20 +721,30 @@ function CTA() {
         <div className="absolute -left-12 -top-12 size-48 rounded-full border border-white/20" />
         <div className="absolute -bottom-20 -right-10 size-72 rounded-full border border-white/15" />
         <motion.h2 className="relative font-display text-4xl font-semibold tracking-tight text-white sm:text-headline-section">
-          Seu bem-estar começa agora.
+          Escolha o seu espaço no MindGlow.
         </motion.h2>
         <p className="relative mx-auto mt-4 max-w-xl text-base leading-7 text-white/75">
-          Dê o primeiro passo para uma rotina mais consciente, equilibrada e
-          acompanhada.
+          O paciente acompanha a própria jornada. O especialista acompanha o
+          cuidado e mantém a conexão entre os encontros.
         </p>
-        <div className="relative mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <ButtonLink href="#" variant="white">
-            <Apple className="size-5" />
-            Baixar para iOS
+        <div className="relative mt-8 grid gap-4 text-left sm:grid-cols-2">
+          <ButtonLink href={clientAppUrl} variant="white" external className="flex-col items-start gap-1 rounded-2xl px-6 py-4">
+            <span className="flex items-center gap-2">
+              <UserRound className="size-5" />
+              App do paciente
+            </span>
+            <span className="text-xs font-normal text-text-secondary-light">
+              Para acompanhar sentimentos, hábitos e evolução.
+            </span>
           </ButtonLink>
-          <ButtonLink href="#" variant="white-outline">
-            <Play className="size-5 fill-current" />
-            Baixar para Android
+          <ButtonLink href={specialistAppUrl} variant="white-outline" external className="flex-col items-start gap-1 rounded-2xl px-6 py-4">
+            <span className="flex items-center gap-2">
+              <HeartHandshake className="size-5" />
+              App do especialista
+            </span>
+            <span className="text-xs font-normal text-white/70">
+              Para acompanhar pacientes e orientar o cuidado.
+            </span>
           </ButtonLink>
         </div>
       </motion.div>
