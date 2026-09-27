@@ -1,0 +1,10 @@
+{
+  "description": "Connect with mental health professionals through teleconsultations, track your mood, and access personalized wellness content on a user-friendly platform.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
