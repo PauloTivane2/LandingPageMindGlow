@@ -795,7 +795,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
         <div className="grid gap-10 border-b border-primary/15 pb-10 md:grid-cols-[1.4fr_0.6fr_0.8fr]">
           <div>
-            <Logo className="h-12 w-44" />
+            <Logo className="h-16 w-56" />
             <p className="mt-4 max-w-sm text-sm leading-6 text-text-secondary-light">
               Tecnologia e cuidado humano para apoiar uma vida mais consciente,
               saudável e conectada.
