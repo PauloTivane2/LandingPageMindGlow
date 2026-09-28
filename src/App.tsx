@@ -750,13 +750,18 @@ function CTA() {
           Acompanha a tua jornada, regista como te sentes e mantém o cuidado
           presente entre cada consulta.
         </p>
-        <div className="relative mt-8 grid gap-4 text-left sm:grid-cols-2">
-          <ButtonLink href={clientAppUrl} variant="white" external className="flex-col items-start gap-1 rounded-2xl px-6 py-4">
+        <div className="relative mt-8 flex justify-center">
+          <ButtonLink
+            href={clientAppUrl}
+            variant="white"
+            external
+            className="w-full max-w-2xl flex-col items-center gap-2 rounded-2xl border-2 border-white px-8 py-5 text-center shadow-2xl shadow-background-dark/20"
+          >
             <span className="flex items-center gap-2">
-              <Download className="size-5" />
+              <Download className="size-6" />
               Baixar o app
             </span>
-            <span className="text-xs font-normal text-text-secondary-light">
+            <span className="text-sm font-normal text-text-secondary-light">
               Para acompanhares sentimentos, hábitos e evolução.
             </span>
           </ButtonLink>
