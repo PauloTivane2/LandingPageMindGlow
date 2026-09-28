@@ -35,7 +35,7 @@ import meditationImage from "./imports/one-1.png"
 const clientAppUrl =
   "https://drive.google.com/file/d/1Z1mTk_dT5IM8devC12KiAJ8MsA8gt7ah/view?usp=drive_link"
 
-type Icon = ComponentType<{ className?: string strokeWidth?: number }>
+type Icon = ComponentType<{ className?: string; strokeWidth?: number }>
 
 const reveal = {
   hidden: { opacity: 0, y: 24 },
@@ -490,7 +490,7 @@ function Features() {
   )
 }
 
-const steps: Array<{ icon: Icon title: string copy: string }> = [
+const steps: Array<{ icon: Icon; title: string; copy: string }> = [
   {
     icon: UserRound,
     title: "Cria o teu perfil",
@@ -602,7 +602,7 @@ function HowItWorks() {
   )
 }
 
-const securityItems: Array<{ icon: Icon title: string copy: string }> = [
+const securityItems: Array<{ icon: Icon; title: string; copy: string }> = [
   {
     icon: LockKeyhole,
     title: "Criptografia",
