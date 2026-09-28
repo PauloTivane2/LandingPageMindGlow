@@ -34,8 +34,6 @@ import meditationImage from "./imports/one-1.png"
 
 const clientAppUrl =
   "https://drive.google.com/file/d/1Z1mTk_dT5IM8devC12KiAJ8MsA8gt7ah/view?usp=drive_link"
-const specialistAppUrl =
-  "https://drive.google.com/file/d/1zI_F86zd5jkmLSNG5W78uhZCtNs-t0Uz/view?usp=drive_link"
 
 type Icon = ComponentType<{ className?: string strokeWidth?: number }>
 
@@ -208,15 +206,7 @@ function Header() {
               rel="noreferrer"
               className="rounded-xl bg-primary px-4 py-3 text-center text-sm font-bold text-background-dark"
             >
-              Baixar app do paciente
-            </a>
-            <a
-              href={specialistAppUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-xl border border-secondary/40 px-4 py-3 text-center text-sm font-bold text-text-primary-light dark:text-white"
-            >
-              Baixar app do especialista
+              Baixar o app
             </a>
           </div>
         </nav>
@@ -265,14 +255,14 @@ function Hero() {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-white/70 px-3 py-1.5 text-xs font-medium tracking-wide text-primary-dark shadow-sm backdrop-blur dark:bg-white/10 dark:text-primary"
           >
             <Sparkles className="size-3.5" />
-            Cuidado que acompanha a sua rotina
+            Cuidado que acompanha a tua rotina
           </motion.div>
           <motion.h1
             variants={reveal}
             transition={{ duration: 0.6 }}
             className="max-w-3xl font-display text-5xl font-bold leading-none tracking-tight text-text-primary-light dark:text-white sm:text-headline-hero"
           >
-            Cuide da sua mente,{" "}
+            Cuida da tua mente,{" "}
             <span className="text-primary-dark dark:text-primary">
               todos os dias.
             </span>
@@ -283,21 +273,17 @@ function Hero() {
             className="mt-6 max-w-xl text-base leading-7 text-text-secondary-light dark:text-text-secondary-dark sm:text-lg sm:leading-8"
           >
             Autocuidado diário, especialistas qualificados e um plano feito para
-            você. Psicologia, nutrição e preparação física em um único lugar.
+            ti. Psicologia, nutrição e preparação física num único lugar.
           </motion.p>
           <motion.div
             variants={reveal}
             transition={{ duration: 0.6 }}
             className="mt-8 flex flex-col gap-3 sm:flex-row"
           >
-            <span className="sr-only">Links externos de download</span>
+            <span className="sr-only">Link externo para download</span>
             <ButtonLink href={clientAppUrl} external>
               <Download className="size-5" />
-              Baixar app do paciente
-            </ButtonLink>
-            <ButtonLink href={specialistAppUrl} variant="outline" external>
-              <Download className="size-5" />
-              Baixar app do especialista
+              Baixar o app
             </ButtonLink>
           </motion.div>
           <motion.div
@@ -345,7 +331,7 @@ function Hero() {
             <img src={logo} alt="" className="size-16 object-contain" />
             <span>
               <span className="block text-sm font-bold text-text-primary-light dark:text-white">
-                Seu espaço seguro
+                O teu espaço seguro
               </span>
               <span className="text-xs text-text-secondary-light dark:text-text-secondary-dark">
                 Cuidado integrado
@@ -380,7 +366,7 @@ function About() {
         <div>
           <SectionTitle
             eyebrow="O que é"
-            title="Bem-estar completo, com você no centro"
+            title="Bem-estar completo, contigo no centro"
             align="left"
           />
           <motion.div
@@ -397,9 +383,9 @@ function About() {
               complicação.
             </p>
             <p>
-              A tecnologia aproxima você de especialistas em psicologia,
+              A tecnologia aproxima-te de especialistas em psicologia,
               nutrição e preparação física, enquanto organiza hábitos, emoções e
-              aprendizados em uma jornada única.
+              aprendizagens numa jornada só tua.
             </p>
           </motion.div>
         </div>
@@ -418,14 +404,14 @@ const features: Array<{
     icon: Smile,
     title: "Acompanhamento de humor",
     description:
-      "Registre como você se sente e reconheça padrões ao longo do tempo.",
+      "Regista como te sentes e reconhece padrões ao longo do tempo.",
     color: "bg-primary-light text-primary-dark",
   },
   {
     icon: Video,
     title: "Teleconsultas em HD",
     description:
-      "Conecte-se a especialistas qualificados de onde você estiver.",
+      "Conecta-te a especialistas qualificados onde quer que estejas.",
     color: "bg-secondary/10 text-secondary",
   },
   {
@@ -439,7 +425,7 @@ const features: Array<{
     icon: ClipboardList,
     title: "Rotinas personalizadas",
     description:
-      "Planos e prescrições que respeitam seu momento e seus objetivos.",
+      "Planos e recomendações que respeitam o teu momento e os teus objetivos.",
     color: "bg-accent/10 text-accent",
   },
   {
@@ -453,7 +439,7 @@ const features: Array<{
     icon: ShieldCheck,
     title: "Segurança e privacidade",
     description:
-      "Seus dados protegidos para você cuidar de si com tranquilidade.",
+      "Os teus dados protegidos para cuidares de ti com tranquilidade.",
     color: "bg-primary-light text-primary-dark",
   },
 ]
@@ -468,7 +454,7 @@ function Features() {
         <SectionTitle
           eyebrow="Uma jornada integrada"
           title="Cuidado que entende o todo"
-          copy="Ferramentas simples e especialistas próximos para apoiar mente, corpo e rotina."
+          copy="Ferramentas simples e especialistas próximos para apoiar a tua mente, o teu corpo e a tua rotina."
         />
         <motion.div
           variants={stagger}
@@ -507,23 +493,23 @@ function Features() {
 const steps: Array<{ icon: Icon title: string copy: string }> = [
   {
     icon: UserRound,
-    title: "Crie o seu perfil",
-    copy: "Conte seus objetivos e escolha as áreas de cuidado.",
+    title: "Cria o teu perfil",
+    copy: "Conta os teus objetivos e escolhe as áreas de cuidado.",
   },
   {
     icon: HeartPulse,
-    title: "Cuide-se diariamente",
-    copy: "Acompanhe seu humor, hábitos e conteúdos recomendados.",
+    title: "Cuida-te diariamente",
+    copy: "Acompanha o teu humor, os teus hábitos e conteúdos recomendados.",
   },
   {
     icon: Video,
-    title: "Consulte sob demanda",
-    copy: "Encontre o especialista ideal e converse por vídeo.",
+    title: "Consulta quando quiseres",
+    copy: "Encontra o especialista ideal e conversa por vídeo.",
   },
   {
     icon: Sparkles,
-    title: "Evolua com continuidade",
-    copy: "Receba rotinas personalizadas e acompanhe sua evolução.",
+    title: "Evolui com continuidade",
+    copy: "Recebe rotinas personalizadas e acompanha a tua evolução.",
   },
 ]
 
@@ -536,8 +522,8 @@ function HowItWorks() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionTitle
           eyebrow="Como funciona"
-          title="Seu cuidado, passo a passo"
-          copy="Comece no seu ritmo. O MindGlow conecta cada pequena ação a um plano de evolução contínua."
+          title="O teu cuidado, passo a passo"
+          copy="Começa ao teu ritmo. O MindGlow transforma cada pequena ação num plano de evolução contínua."
         />
         <div className="relative mt-16">
           <motion.div
@@ -603,11 +589,11 @@ function HowItWorks() {
               Consulta conectada
             </span>
             <motion.h3 className="mt-5 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-              Profissionais que enxergam você por inteiro
+              Profissionais que te veem por inteiro
             </motion.h3>
             <p className="mt-4 leading-7 text-white/65">
               Psicologia, nutrição e preparação física compartilham uma visão
-              integrada da sua jornada — sempre com o seu consentimento.
+              integrada da tua jornada — sempre com o teu consentimento.
             </p>
           </motion.div>
         </div>
@@ -630,7 +616,7 @@ const securityItems: Array<{ icon: Icon title: string copy: string }> = [
   {
     icon: EyeOff,
     title: "Privacidade real",
-    copy: "Você decide o que compartilhar e com quem.",
+    copy: "Tu decides o que partilhar e com quem.",
   },
 ]
 
@@ -691,14 +677,14 @@ function Ecosystem() {
         >
           <img
             src={progressImage}
-            alt="Pessoa acompanhando seu progresso pelo celular"
+            alt="Pessoa a acompanhar o teu progresso pelo telemóvel"
             className="block h-auto w-full rounded-[1.6rem] object-contain"
           />
         </motion.div>
         <div>
           <SectionTitle
             eyebrow="Ecossistema conectado"
-            title="Você evolui. Sua equipa acompanha."
+            title="Tu evoluis. O MindGlow acompanha."
             align="left"
           />
           <motion.p
@@ -708,8 +694,8 @@ function Ecosystem() {
             viewport={{ once: true }}
             className="mt-5 text-lg leading-8 text-text-secondary-light dark:text-text-secondary-dark"
           >
-            Com o MindGlow Specialist, profissionais recebem atualizações em
-            tempo real, adaptam rotinas e mantêm a continuidade entre consultas.
+            Com o MindGlow, acompanhas o teu progresso, recebes recomendações
+            personalizadas e manténs o foco entre cada consulta.
           </motion.p>
           <motion.div
             variants={reveal}
@@ -720,7 +706,7 @@ function Ecosystem() {
           >
             {[
               [MessageCircle, "Comunicação contínua"],
-              [Dumbbell, "Planos que evoluem com você"],
+              [Dumbbell, "Planos que evoluem contigo"],
             ].map(([ItemIcon, label]) => {
               const ListedIcon = ItemIcon as Icon
               return (
@@ -755,32 +741,23 @@ function CTA() {
         <div className="absolute -left-12 -top-12 size-48 rounded-full border border-white/20" />
         <div className="absolute -bottom-20 -right-10 size-72 rounded-full border border-white/15" />
         <motion.h2 className="relative font-display text-4xl font-semibold tracking-tight text-white sm:text-headline-section">
-          Escolha o seu espaço no MindGlow.
+          Escolhe o teu espaço no MindGlow.
         </motion.h2>
         <p className="relative mt-3 text-xs font-bold uppercase tracking-[0.2em] text-primary-light">
           Links de download externos
         </p>
         <p className="relative mx-auto mt-4 max-w-xl text-base leading-7 text-white/75">
-          O paciente acompanha a própria jornada. O especialista acompanha o
-          cuidado e mantém a conexão entre os encontros.
+          Acompanha a tua jornada, regista como te sentes e mantém o cuidado
+          presente entre cada consulta.
         </p>
         <div className="relative mt-8 grid gap-4 text-left sm:grid-cols-2">
           <ButtonLink href={clientAppUrl} variant="white" external className="flex-col items-start gap-1 rounded-2xl px-6 py-4">
             <span className="flex items-center gap-2">
               <Download className="size-5" />
-              Baixar app do paciente
+              Baixar o app
             </span>
             <span className="text-xs font-normal text-text-secondary-light">
-              Para acompanhar sentimentos, hábitos e evolução.
-            </span>
-          </ButtonLink>
-          <ButtonLink href={specialistAppUrl} variant="white-outline" external className="flex-col items-start gap-1 rounded-2xl px-6 py-4">
-            <span className="flex items-center gap-2">
-              <Download className="size-5" />
-              Baixar app do especialista
-            </span>
-            <span className="text-xs font-normal text-white/70">
-              Para acompanhar pacientes e orientar o cuidado.
+              Para acompanhares sentimentos, hábitos e evolução.
             </span>
           </ButtonLink>
         </div>
