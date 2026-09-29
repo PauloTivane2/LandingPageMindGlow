@@ -1,0 +1,25 @@
+refactor: modularize architecture, improve mobile-first layout and add background grid
+
+- Architecture Modularization:
+  - Decoupled monolithic App.tsx (reduced from 853 lines to ~25 lines).
+  - Organized directories into assets, components (common, layout, sections), constants, data, and types.
+  - Separated mock and domain data into dedicated files (features.ts, steps.ts, security.ts, navigation.ts).
+  - Defined strict TypeScript contracts and interfaces in types/index.ts.
+
+- Mobile-First & Responsiveness:
+  - Implemented reusable Carousel.tsx component supporting continuous horizontal card sequencing, native touch swipe, scroll snap, and interactive pagination dots.
+  - Refactored Features.tsx and HowItWorks.tsx to render a horizontal swipeable carousel on mobile and a multi-column grid on desktop.
+  - Enhanced Header.tsx with an animated mobile drawer, background backdrop blur, auto-close on anchor clicks, scroll locking, and ergonomic 48px touch targets.
+  - Fixed image responsiveness across all sections (Hero, HowItWorks, Ecosystem), removing artificial borders and heavy paddings while enforcing aspect-ratio preservation.
+  - Redesigned the Connected Consultation banner to display the complete, uncropped professional photograph with a directional gradient.
+
+- Background & Visual Design:
+  - Created BackgroundGrid.tsx featuring a high-precision SVG vector grid with intersection crosshairs and animated gradient orbs.
+  - Configured transparent section backgrounds to maintain a continuous grid texture across the entire page scroll.
+  - Added .no-scrollbar and overflow-x prevention utilities in index.css.
+
+- Domain Alignment (MindGlow Core & Specialist):
+  - Aligned value proposition and clinical copy with the official MindGlow specification.
+  - Integrated the multidisciplinary triad (Psychology, Clinical Nutrition, and Physical Conditioning).
+  - Updated the patient journey to 4 structured stages: Profile Onboarding, Daily Engagement, Professional Care, and Therapeutic Continuity.
+  - Emphasized end-to-end encryption, health data isolation, and real-time synchronization with the MindGlow Specialist platform.

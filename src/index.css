@@ -15,11 +15,21 @@
 body {
   margin: 0;
   background: var(--color-surface-light);
+  overflow-x: hidden;
 }
 
 ::selection {
   background: color-mix(in srgb, var(--color-primary) 28%, transparent);
   color: var(--color-text-primary-light);
+}
+
+/* Ocultar barra de rolagem mantendo funcionalidade de scroll/swipe */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
