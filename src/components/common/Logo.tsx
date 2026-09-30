@@ -1,4 +1,4 @@
-import defaultLogo from "../../assets/logos/mindglow-full.png"
+import defaultLogo from "../../assets/logos/mindglow-simple.png"
 import type { LogoProps } from "../../types"
 
 export function Logo({

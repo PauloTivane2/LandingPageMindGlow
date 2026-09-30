@@ -23,6 +23,7 @@ export function BackgroundGrid({
         <>
           {/* Orbe Ciano/Primário (Canto superior esquerdo) */}
           <motion.div
+            style={{ willChange: "transform" }}
             animate={
               reducedMotion
                 ? undefined
@@ -42,6 +43,7 @@ export function BackgroundGrid({
 
           {/* Orbe Magenta/Secundário (Zona intermediária / direita) */}
           <motion.div
+            style={{ willChange: "transform" }}
             animate={
               reducedMotion
                 ? undefined
@@ -62,6 +64,7 @@ export function BackgroundGrid({
 
           {/* Orbe Inferior Ciano / Roxo (Zona baixa / Ecossistema & Download) */}
           <motion.div
+            style={{ willChange: "transform" }}
             animate={
               reducedMotion
                 ? undefined

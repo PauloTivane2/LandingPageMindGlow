@@ -1,6 +1,6 @@
 import { Video } from "lucide-react"
 import { motion } from "motion/react"
-import consultationImage from "../../assets/images/consultation.png"
+import consultationImage from "../../assets/images/consultation.webp"
 import { howItWorksSteps } from "../../data/steps"
 import type { StepItem } from "../../types"
 import { Carousel } from "../common/Carousel"
@@ -108,6 +108,8 @@ export function HowItWorks() {
             <img
               src={consultationImage}
               alt="Especialista pronta para uma teleconsulta"
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-contain object-bottom sm:object-right-bottom"
             />
           </div>

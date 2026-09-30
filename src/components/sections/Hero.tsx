@@ -1,7 +1,7 @@
 import { Check, Download, Sparkles } from "lucide-react"
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
-import meditationImage from "../../assets/images/meditation.png"
-import logo from "../../assets/logos/mindglow-full.png"
+import meditationImage from "../../assets/images/meditation.webp"
+import logo from "../../assets/logos/mindglow-simple.png"
 import { CLIENT_APP_URL } from "../../constants/links"
 import { ButtonLink } from "../common/ButtonLink"
 import { reveal, stagger } from "../common/animations"
@@ -94,6 +94,9 @@ export function Hero() {
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             src={meditationImage}
             alt="Mulher em momento de meditação e autocuidado"
+            loading="eager"
+            fetchPriority="high"
+            decoding="sync"
             className="block h-auto max-h-[290px] w-auto max-w-full object-contain sm:max-h-[380px] lg:max-h-[460px]"
           />
 

@@ -1,6 +1,6 @@
 import { Dumbbell, MessageCircle, RefreshCw, Zap } from "lucide-react"
 import { motion } from "motion/react"
-import progressImage from "../../assets/images/progress.png"
+import progressImage from "../../assets/images/progress.webp"
 import type { LucideIconType } from "../../types"
 import { SectionTitle } from "../common/SectionTitle"
 import { reveal } from "../common/animations"
@@ -27,6 +27,8 @@ export function Ecosystem() {
           <img
             src={progressImage}
             alt="Pessoa a acompanhar o teu progresso pelo telemóvel"
+            loading="lazy"
+            decoding="async"
             className="block h-auto max-h-[250px] w-auto max-w-full object-contain sm:max-h-[340px] lg:max-h-[440px]"
           />
         </motion.div>
