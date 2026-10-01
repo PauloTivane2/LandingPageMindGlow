@@ -35,7 +35,7 @@ export function CTA() {
           <ButtonLink
             href={CLIENT_APP_URL}
             variant="white"
-            external
+            download="mindglow.apk"
             className="w-full max-w-xl flex-col items-center gap-2 rounded-2xl border-2 border-white px-6 py-4 text-center shadow-2xl shadow-background-dark/20 sm:px-8 sm:py-5"
           >
             <span className="flex items-center gap-2 text-base font-bold sm:text-lg">

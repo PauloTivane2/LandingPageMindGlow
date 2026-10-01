@@ -58,7 +58,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
-            <ButtonLink href={CLIENT_APP_URL} external className="w-full sm:w-auto">
+            <ButtonLink href={CLIENT_APP_URL} download="mindglow.apk" className="w-full sm:w-auto">
               <Download className="size-5" />
               Baixar o app
             </ButtonLink>

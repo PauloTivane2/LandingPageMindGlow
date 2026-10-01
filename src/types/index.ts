@@ -35,6 +35,7 @@ export interface ButtonLinkProps {
   variant?: "primary" | "outline" | "white" | "white-outline"
   className?: string
   external?: boolean
+  download?: boolean | string
   onClick?: () => void
 }
 

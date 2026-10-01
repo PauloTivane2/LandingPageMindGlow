@@ -97,9 +97,12 @@ export function Header() {
               <div className="mt-2 grid gap-2 border-t border-border-light pt-3 dark:border-white/10">
                 <a
                   href={CLIENT_APP_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={handleLinkClick}
+                  download="mindglow.apk"
+                  onClick={(e) => {
+                    handleLinkClick()
+                    e.preventDefault()
+                    window.location.assign(CLIENT_APP_URL)
+                  }}
                   className="flex min-h-[48px] items-center justify-center rounded-xl bg-primary px-4 py-3 text-center text-sm font-bold text-background-dark shadow-md active:bg-primary-dark"
                 >
                   Baixar o app

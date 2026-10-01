@@ -7,6 +7,7 @@ export function ButtonLink({
   variant = "primary",
   className = "",
   external = false,
+  download,
   onClick,
 }: ButtonLinkProps) {
   const styles = {
@@ -20,12 +21,27 @@ export function ButtonLink({
       "border border-white/60 bg-white/10 text-white backdrop-blur hover:bg-white/20",
   }
 
+  // Detecta se o link é para descarregar o APK
+  const isApk = href.toLowerCase().endsWith(".apk") || Boolean(download)
+  // Links de download de ficheiros NUNCA devem abrir abas separadas
+  const isExternalPage = external && !isApk
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (onClick) onClick()
+    if (isApk) {
+      // Força o descarregamento imediato sem abrir uma página em branco
+      e.preventDefault()
+      window.location.assign(href)
+    }
+  }
+
   return (
     <motion.a
       href={href}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noreferrer" : undefined}
-      onClick={onClick}
+      target={isExternalPage ? "_blank" : undefined}
+      rel={isExternalPage ? "noreferrer" : undefined}
+      download={isApk ? (typeof download === "string" ? download : "mindglow.apk") : undefined}
+      onClick={handleClick}
       whileHover={{ scale: 1.03, y: -1 }}
       whileTap={{ scale: 0.98 }}
       className={`inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold tracking-wide transition-colors ${styles[variant]} ${className}`}
