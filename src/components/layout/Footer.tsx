@@ -66,9 +66,34 @@ export function Footer() {
           </div>
         </div>
 
-        <p className="pt-7 text-xs text-text-secondary-light dark:text-text-secondary-dark">
-          © {new Date().getFullYear()} MindGlow. Todos os direitos reservados.
-        </p>
+        <div className="flex flex-col items-center justify-between gap-4 pt-7 sm:flex-row">
+          <p className="text-xs text-text-secondary-light dark:text-text-secondary-dark">
+            © {new Date().getFullYear()} MindGlow. Todos os direitos reservados.
+          </p>
+
+          <div className="flex items-center gap-2 text-xs text-text-secondary-light dark:text-text-secondary-dark">
+            <span>Desenvolvido pela</span>
+            <motion.a
+              href="https://www.kodeza.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, y: -1 }}
+              whileTap={{ scale: 0.96 }}
+              className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold tracking-wide shadow-sm transition-all"
+              style={{
+                backgroundColor: "#203627",
+                color: "#E8FF40",
+                border: "1px solid rgba(157, 196, 213, 0.4)",
+              }}
+            >
+              <span
+                className="size-1.5 rounded-full animate-pulse"
+                style={{ backgroundColor: "#E8FF40" }}
+              />
+              <span>Kodeza</span>
+            </motion.a>
+          </div>
+        </div>
       </div>
     </footer>
   )
